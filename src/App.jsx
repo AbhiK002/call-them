@@ -17,14 +17,14 @@ export function showAndHidePopup(text) {
 
 function TopBar({ userInfo }) {
   return <div className='top-bar'>
-    <div className='top-logo' onClick={() => {location.href = '/'}}>
+    <div className='top-logo' onClick={() => {window.location.href = config.homePage}}>
       <img className='logo-img' src='./logo.svg' height={32} alt='[LOGO]' />
       <span className='logo-text'>CallThem</span>
     </div>
 
     <div className='top-user-div'>
       <span className='user-name'>{userInfo.username ? userInfo.username : "Login"}</span>
-      <button className='user-button' onClick={() => {location.href = '/profile'}}>
+      <button className='user-button' onClick={() => {window.location.href = config.profilePage}}>
         <img height={36} src='./user.svg' />
       </button>
     </div>
@@ -125,15 +125,15 @@ function App() {
         <Route path='/profile' Component={
             sessionActive 
             ? () => {return <components.profile userDetails={currentUser} />}
-            : () => {location.href = "/login"; return null}
+            : () => {window.location.href = config.loginPage; return null}
         } />
         <Route path='/login' Component={
           sessionActive 
-          ? () => {location.href = "/"; return null}
+          ? () => {window.location.href = config.homePage; return null}
           : () => {return <components.loginRegister isRegistering={false}/>}} />
         <Route path='/register' Component={
           sessionActive 
-          ? () => {location.href = "/"; return null} 
+          ? () => {window.location.href = config.homePage; return null} 
           : () => {return <components.loginRegister isRegistering={true}/>}} />
         <Route path='/*' Component={() => {
           return <span style={{textAlign: 'center', marginTop: "1rem"}}>

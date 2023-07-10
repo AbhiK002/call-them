@@ -12,7 +12,7 @@ function mapContactListToDisplay(currentContactsList, changeViewFunction) {
             return <span id="contacts-list-placeholder" style={{
                 cursor: "pointer"
             }} onClick={() => {
-                location.href = "/login"
+                document.location.href = config.loginPage
             }}>Please login to view contacts</span>
         }
         if (currentContactsList.length == 0){
@@ -106,7 +106,7 @@ function NewContactForm({ userDetails, changeViewFunction, syncContacts }) {
         }
         if(userNotLoggedIn) {
             setTimeout(() => {
-                location.href = "/login"
+                document.location.href = config.loginPage
             }, 1200);
         }
     }
@@ -171,7 +171,7 @@ function EditContactForm({contactDetails, changeViewFunction, syncContacts}) {
         }
         if(userNotLoggedIn) {
             setTimeout(() => {
-                location.href = "/login"
+                document.location.href = config.loginPage
             }, 1200);
         }
     }
@@ -235,7 +235,7 @@ function PreviewPaneDiv({ contactDetails, userDetails, changeViewFunction, syncC
             }
             if(userNotLoggedIn) {
                 setTimeout(() => {
-                    location.href = "/login"
+                    document.location.href = config.loginPage
                 }, 1200);
             }
         }
@@ -255,7 +255,7 @@ function PreviewPaneDiv({ contactDetails, userDetails, changeViewFunction, syncC
                         }
                         navigator.clipboard.writeText(`${contactDetails.ph_num}`)
                         showPopup("Copied Number")
-                    }}><img src="/64_copy.png" alt="(COPY)" height={16} /></span>
+                    }}><img src="./64_copy.png" alt="(COPY)" height={16} /></span>
                 </p>
             </span>
             <div className="contact-related-buttons">
@@ -337,8 +337,8 @@ export function Home({ userDetails }) {
             }
             if(userNotLoggedIn) {
                 setTimeout(() => {
-                    location.href = "/login"
-                }, 2000);
+                    document.location.href = config.loginPage
+                }, 1200);
             }
         }
     }

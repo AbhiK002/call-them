@@ -21,7 +21,7 @@ function login(username, password) {
     }).finally(() => {
         if (redirect != true) return;
         setTimeout(() => {
-            location.href = "/"
+            document.location.href = config.homePage
         }, 2000);
     })
 }
@@ -56,12 +56,12 @@ function register(name, username, password) {
     }).finally(() => {
         if(redirect == "login") {
             setTimeout(() => {
-                location.href = "/login";
+                document.location.href = config.loginPage;
             }, 1400);
         }
         else if(redirect == "/") {
             setTimeout(() => {
-                location.href = "/";
+                document.location.href = config.homePage;
             }, 2000);
         }
     })    
@@ -141,7 +141,7 @@ export function LoginRegister({ isRegistering }) {
                 <button type="reset" className="form-reset-button secondary-button" onClick={hideError}>Reset</button>
                 <button type='button' className='go-to-login-reg-button third-type-button' onClick={(e) => {
                     e.preventDefault();
-                    location.href = isRegistering ? "/login" : "/register";
+                    document.location.href = isRegistering ? config.loginPage : config.registerPage;
                 }}>{isRegistering ? "Login" : "Register"} instead</button>
             </div>
         </form>
