@@ -1,0 +1,177 @@
+.home-content {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+}
+
+.contacts-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0.8rem;
+    gap: 1rem
+}
+
+.contacts-div-title {
+    text-align: center;
+    font-weight: 400;
+    z-index: 2;
+}
+
+#contacts-list-placeholder {
+    display: block;
+    color: var(--accent-6);
+    padding: 1rem;
+    border: 2px dotted var(--accent-6-hf);
+    margin-top: 1rem;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.contacts-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    flex-grow: 1;
+    height: 20px;
+    padding: 1rem;
+    /* border: 1px dashed var(--accent-5-qr);
+    box-shadow: inset 0px 0px 32px var(--accent-4-qr); */
+    border-radius: 32px;
+}
+
+.contacts-list-item {
+    border: 2px solid var(--accent-7-hf);
+    cursor: pointer;
+    width: 400px;
+    text-overflow: ellipsis;
+    color: var(--accent-7);
+    background-color: var(--accent-2-qr);
+    display: flex;
+    padding: 0.5rem 0rem;
+    margin-top: 0.5rem;
+    border-radius: 16px;
+    justify-content: center;
+    transition: box-shadow 300ms, border 300ms;
+    overflow: visible;
+}
+@media (max-width: 500px) {
+    .contacts-list-item {
+        width: 250px;
+    }
+}
+
+.contacts-list-item:hover {
+    border: 2px solid var(--accent-7);
+    box-shadow: 0px 0px 8px 2px var(--accent-7-qr), inset 0px 0px 16px 4px var(--accent-6-qr);
+}
+
+.contact-preview-div-container {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(16px);
+    z-index: 4;
+}
+
+.contact-preview-div {
+    position: relative;
+    height: fit-content;
+    background-color: var(--accent-0);
+    padding: 1rem;
+    border: 4px solid var(--accent-7-hf);
+    box-shadow: 0px 0px 48px var(--accent-7-qr);
+    border-radius: 32px;
+    transform-origin: left;
+    margin: 0.5rem;
+    opacity: 1;
+}
+.contact-preview-div.card-hidden {
+    opacity: 0;
+}
+.contact-preview-div-container.card-hidden {
+    visibility: hidden;
+}
+
+.contact-card-title {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.contact-preview-details {
+    display: block;
+    margin: 1rem 0rem 1rem 0rem;
+    text-align: left;
+}
+.contact-preview-name, .contact-preview-number {
+    color: var(--accent-7);
+    padding: 0.5rem 1rem;
+}
+#name-value, #number-value {
+    color: var(--text-col);
+    padding-left: 20px;
+}
+
+.contact-related-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem
+}
+
+#copy-number-button {
+    margin-left: 0.75rem;
+    padding: 4px;
+    cursor: pointer;
+    border: 2px solid var(--accent-7-hf);
+    border-radius: 8px;
+    transition: border 300ms, box-shadow 300ms;
+}
+#copy-number-button img {
+    height: 16px;
+    width: 16px;
+}
+#copy-number-button:hover {
+    border: 2px solid var(--accent-6)
+}
+
+.close-preview-button {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 42px;
+    padding: 0.3rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.close-preview-button.critical-button {
+    background-color: #ff000093;
+    color: white
+}
+
+.close-preview-button.critical-button:hover {
+    background-color: red;
+    color: white
+}
+
+.add-contact-button {
+    margin-bottom: 0.2rem;
+    z-index: 2;
+}
+
+#contact-form-error {
+    color: red;
+    display: block;
+    font-size: 0.7rem;
+    margin-bottom: 0.7rem;
+    text-align: center;
+    opacity: 0;
+}
