@@ -18,14 +18,14 @@ export function showAndHidePopup(text) {
 function TopBar({ userInfo }) {
   return <div className='top-bar'>
     <div className='top-logo' onClick={() => {location.href = '/'}}>
-      <img className='logo-img' src='/logo.svg' height={32} alt='[LOGO]' />
+      <img className='logo-img' src='./logo.svg' height={32} alt='[LOGO]' />
       <span className='logo-text'>CallThem</span>
     </div>
 
     <div className='top-user-div'>
       <span className='user-name'>{userInfo.username ? userInfo.username : "Login"}</span>
       <button className='user-button' onClick={() => {location.href = '/profile'}}>
-        <img height={36} src='/user.svg' />
+        <img height={36} src='./user.svg' />
       </button>
     </div>
   </div>
