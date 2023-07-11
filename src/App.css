@@ -54,11 +54,34 @@
 .top-user-div {
     display: flex;
     align-items: center;
-    gap: 8px
+    gap: 8px;
+    text-overflow: ellipsis;
+    height: 100%;
+    overflow: hidden;
+    margin-left: 12px;
 }
 
 .user-name {
+    display: flex;
     font-size: 1.1rem;
+    word-wrap: break-word;
+    word-break: break-all;
+    align-self: flex-start;
+    transform: translateY(16px);
+}
+
+@media (max-width: 420px) {
+    .logo-img {
+        height: 1.8rem;
+    }    
+    .logo-text {
+        font-size: 1.2rem;
+        content: "CT";
+    }
+    .user-name {
+        font-size: 0.9rem;
+        visibility: hidden;
+    }
 }
 .user-button {
     padding: 6px;

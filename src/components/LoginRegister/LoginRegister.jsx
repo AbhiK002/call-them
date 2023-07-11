@@ -104,6 +104,10 @@ function validateInputs(isRegistering) {
         showError("Your username must have at least 5 characters (max 32)");
         return;
     }
+    if(username.match(/^.* .*$/)) {
+        showError("Your username cannot contain spaces")
+        return;
+    }
 
     if(password.length < 8 || password.length > 256) {
         showError("Your password must have at least 8 characters (max 256)");
