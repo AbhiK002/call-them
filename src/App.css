@@ -1,5 +1,5 @@
 #pop-up {
-    position: absolute;
+    position: fixed;
     height: fit-content; width: fit-content;
     top: 8px; left: 50%; transform: translateX(-50%);
     padding: 4px 8px;

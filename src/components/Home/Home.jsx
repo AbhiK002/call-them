@@ -247,15 +247,16 @@ function PreviewPaneDiv({ contactDetails, userDetails, changeViewFunction, syncC
                     Name: <span id="name-value">{contactDetails.name}</span>
                 </p>
                 <p className="contact-preview-number">
-                    Number: <span id="number-value">{contactDetails.ph_num}</span>
-                    <span id="copy-number-button" className="secondary-button" onClick={() => {
-                        if(contactDetails.ph_num.trim() == "") {
-                            showPopup("No Number to Copy");
-                            return;
-                        }
-                        navigator.clipboard.writeText(`${contactDetails.ph_num}`)
-                        showPopup("Copied Number")
-                    }}><img src="./64_copy.png" alt="(COPY)" height={16} /></span>
+                    Number: <span id="number-value">{contactDetails.ph_num}
+                        <span id="copy-number-button" className="secondary-button" onClick={() => {
+                            if(contactDetails.ph_num.trim() == "") {
+                                showPopup("No Number to Copy");
+                                return;
+                            }
+                            navigator.clipboard.writeText(`${contactDetails.ph_num}`)
+                            showPopup("Number Copied")
+                        }}><img src="./64_copy.png" alt="(COPY)" height={16} /></span>
+                    </span>
                 </p>
             </span>
             <div className="contact-related-buttons">
