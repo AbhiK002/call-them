@@ -78,6 +78,7 @@
     justify-content: center;
     align-items: center;
     visibility: visible;
+    -webkit-backdrop-filter: blur(16px);
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(16px);
     z-index: 4;
@@ -145,6 +146,7 @@
     border: 2px solid var(--accent-7-hf);
     border-radius: 8px;
     transition: border 300ms, box-shadow 300ms;
+    user-select: none;
 }
 #copy-number-button img {
     height: 16px;
@@ -155,6 +157,7 @@
 }
 
 .close-preview-button {
+    user-select: none;
     position: absolute;
     right: 12px;
     top: 12px;

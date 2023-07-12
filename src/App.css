@@ -33,6 +33,7 @@
     padding: 4px;
     border: 2px solid transparent;
     border-radius: 12px;
+    user-select: none;
 }
 .top-logo:hover {
     border: 2px solid var(--accent-7-hf);
@@ -88,6 +89,7 @@
     display: flex;
     align-items: center; justify-content: center;
     cursor: pointer;
+    user-select: none;
 }
 .user-button img {
     height: 24px; width: 24px;
