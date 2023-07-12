@@ -67,7 +67,6 @@
     word-wrap: break-word;
     word-break: break-all;
     text-overflow: ellipsis;
-    white-space: nowrap;
     overflow: hidden;
 }
 
