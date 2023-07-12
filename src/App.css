@@ -58,7 +58,6 @@
     gap: 8px;
     text-overflow: ellipsis;
     height: 100%;
-    overflow: hidden;
     margin-left: 12px;
 }
 
@@ -67,8 +66,9 @@
     font-size: 1.1rem;
     word-wrap: break-word;
     word-break: break-all;
-    align-self: flex-start;
-    transform: translateY(16px);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media (max-width: 420px) {
