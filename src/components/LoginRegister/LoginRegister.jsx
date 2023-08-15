@@ -4,7 +4,7 @@ import './loginregister.css'
 
 function login(username, password) {
     let redirect = false;
-    axios.post(config.getBackendApiUrl("/login"), {username: username, password: password}).then((res) => {
+    axios.post(config.getBackendApiUrl("/login-callme"), {username: username, password: password}).then((res) => {
         if(res.data.valid){
             const token = res.data.token;
             localStorage.setItem(config.tokenLocalKey, token);
@@ -29,7 +29,7 @@ function login(username, password) {
 function register(name, username, password) {
     let redirect = false
 
-    axios.post(config.getBackendApiUrl("/register"), {name: name, username: username, password: password}).then((res) => {
+    axios.post(config.getBackendApiUrl("/register-callme"), {name: name, username: username, password: password}).then((res) => {
         if(res.data.valid){
             const token = res.data.token;
             if(token){

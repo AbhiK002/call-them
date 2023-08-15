@@ -90,7 +90,7 @@ function App() {
     
     if(token) {
       // validate token to auto login
-      axios.post(config.getBackendApiUrl("/autologin"), {}, {
+      axios.post(config.getBackendApiUrl("/autologin-callme"), {}, {
         headers: {
           Authorization: `Bearer ${token}`
         }
