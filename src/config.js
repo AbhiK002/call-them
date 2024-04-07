@@ -15,7 +15,7 @@ const configObj = {
     registerPage: `${prefix}/register`,
     profilePage: `${prefix}/profile`,
 
-    backendAPI: "https://master-forky-api.onrender.com",
+    backendAPI: "https://master-forky.up.railway.app",
     getBackendApiUrl: (suffix) => {return configObj.backendAPI + suffix}
 }
 
